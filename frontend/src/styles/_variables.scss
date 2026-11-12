@@ -1,0 +1,82 @@
+$font-display: 'Fraunces', Georgia, serif;
+$font-body: 'Sora', 'Segoe UI', sans-serif;
+
+$radius-sm: 10px;
+$radius-md: 16px;
+$radius-lg: 24px;
+
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+@mixin tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --ink: #10231f;
+  --ink-soft: #2c433d;
+  --muted: #5f736d;
+  --line: rgba(16, 35, 31, 0.12);
+  --paper: #f3f7f4;
+  --panel: rgba(255, 255, 255, 0.78);
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-soft: rgba(255, 255, 255, 0.45);
+  --surface-strong: #fbfefc;
+  --accent: #0e7490;
+  --accent-deep: #0b5f75;
+  --accent-soft: rgba(14, 116, 144, 0.12);
+  --danger: #b42318;
+  --danger-soft: rgba(180, 35, 24, 0.1);
+  --todo: #8a6d3b;
+  --progress: #1f6f8b;
+  --done: #2f6b3b;
+  --shadow: 0 18px 50px rgba(16, 35, 31, 0.12);
+  --shadow-soft: 0 8px 24px rgba(16, 35, 31, 0.08);
+  --backdrop: rgba(16, 35, 31, 0.45);
+  --bg-1: rgba(14, 116, 144, 0.18);
+  --bg-2: rgba(31, 111, 139, 0.16);
+  --bg-gradient: linear-gradient(160deg, #edf4f0 0%, #f3f7f4 42%, #e7efea 100%);
+  --column-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.45));
+  --chip: rgba(16, 35, 31, 0.06);
+  --icon-bg: rgba(16, 35, 31, 0.04);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #e7f2ed;
+  --ink-soft: #c5d7cf;
+  --muted: #93a8a0;
+  --line: rgba(231, 242, 237, 0.12);
+  --paper: #0f1714;
+  --panel: rgba(22, 32, 28, 0.88);
+  --surface: rgba(28, 40, 35, 0.96);
+  --surface-soft: rgba(20, 30, 26, 0.7);
+  --surface-strong: #18231f;
+  --accent: #22b8cf;
+  --accent-deep: #1499ad;
+  --accent-soft: rgba(34, 184, 207, 0.16);
+  --danger: #ff7b72;
+  --danger-soft: rgba(255, 123, 114, 0.14);
+  --todo: #e0b567;
+  --progress: #6ec1d9;
+  --done: #7dcb95;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.28);
+  --backdrop: rgba(4, 8, 7, 0.72);
+  --bg-1: rgba(34, 184, 207, 0.12);
+  --bg-2: rgba(110, 193, 217, 0.1);
+  --bg-gradient: linear-gradient(160deg, #101916 0%, #0f1714 45%, #13201b 100%);
+  --column-gradient: linear-gradient(180deg, rgba(28, 40, 35, 0.92), rgba(20, 30, 26, 0.78));
+  --chip: rgba(231, 242, 237, 0.08);
+  --icon-bg: rgba(231, 242, 237, 0.06);
+}

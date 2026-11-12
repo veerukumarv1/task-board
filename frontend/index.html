@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var root = document.documentElement;
+          var stored = localStorage.getItem('ttb-theme');
+          var theme = stored === 'light' || stored === 'dark'
+            ? stored
+            : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          root.setAttribute('data-theme', theme);
+
+          var accent = localStorage.getItem('ttb-accent') || '#0e7490';
+          if (!/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(accent)) accent = '#0e7490';
+          root.style.setProperty('--accent', accent);
+          root.style.setProperty('--accent-deep', 'color-mix(in srgb, ' + accent + ' 72%, black)');
+          root.style.setProperty('--accent-soft', 'color-mix(in srgb, ' + accent + ' 18%, transparent)');
+          root.style.setProperty('--bg-1', 'color-mix(in srgb, ' + accent + ' 16%, transparent)');
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Task Board</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
